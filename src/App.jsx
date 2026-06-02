@@ -1579,7 +1579,7 @@ function App() {
 
   // Si es individual, mostrar juego
   return (
-    <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900">
+    <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900 overflow-x-hidden">
       <Header companyRefreshKey={inviteState === 'joined' ? 1 : 0} onOpenSettings={() => setConfigOpen(true)} />
 
       {suspensionInfo && (
@@ -1589,7 +1589,7 @@ function App() {
         </div>
       )}
 
-      <main className="flex-1 overflow-y-auto py-2 px-2 sm:px-4">
+      <main className="flex-1 overflow-y-auto overflow-x-hidden py-2 px-2 sm:px-4">
         <div className="mx-auto flex max-w-screen-2xl gap-3 items-start">
           {/* Left ad — hidden for company members */}
           {!userHasCompany && (
@@ -1600,7 +1600,7 @@ function App() {
 
           {/* Game area */}
           <div className="flex-1 min-w-0 overflow-hidden rounded-2xl bg-slate-50 dark:bg-slate-900">
-          <div className="grid lg:items-stretch lg:grid-cols-[1.2fr_1fr]">
+          <div className="grid w-full lg:items-stretch lg:grid-cols-[1.2fr_1fr]">
             <section className="order-2 lg:order-1 flex flex-col justify-center space-y-4 p-4 sm:p-6 lg:p-8">
               <div className="space-y-4">
                 {/* Banner de invitación a empresa */}
@@ -1887,8 +1887,8 @@ function App() {
               </div>
             </section>
 
-            <aside className="order-1 lg:order-2 flex flex-col items-stretch justify-start gap-4 p-2 sm:p-4 transition-all duration-500">
-              <div className="w-full relative" style={{ height: 'clamp(160px, 35vw, calc(100vh - 120px))' }}>
+            <aside className="order-1 lg:order-2 flex flex-col items-stretch justify-start gap-4 p-2 sm:p-4 transition-all duration-500 min-w-0 overflow-hidden">
+              <div className="w-full max-w-full relative overflow-hidden" style={{ height: 'clamp(200px, 45vw, calc(100vh - 120px))' }}>
                 <ImageCard
                   mode={mode}
                   data={imageData ?? {}}
