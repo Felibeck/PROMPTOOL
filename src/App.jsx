@@ -1888,7 +1888,7 @@ function App() {
             </section>
 
             <aside className="order-1 lg:order-2 flex flex-col items-stretch justify-start gap-4 p-2 sm:p-4 transition-all duration-500">
-              <div className="w-full relative" style={{ height: 'clamp(180px, 42vw, calc(100vh - 120px))' }}>
+              <div className="w-full relative" style={{ height: 'clamp(160px, 35vw, calc(100vh - 120px))' }}>
                 <ImageCard
                   mode={mode}
                   data={imageData ?? {}}

@@ -476,11 +476,16 @@ const PromptInput = ({ promptUsuario, setPromptUsuario, onSubmit, isLoading, dis
           onChange={handleChange}
           onCopy={handleAntiPaste} onPaste={handleAntiPaste} onCut={handleAntiPaste}
           onDrop={handleAntiPaste} onKeyDown={handleKeyDown} onContextMenu={handleContextMenu}
-          rows="3"
+          rows="4"
           placeholder={t('promptPlaceholder')}
           disabled={disabled}
           maxLength={2000}
-          className="w-full min-h-[100px] resize-none rounded-t-xl bg-transparent px-4 py-3 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none focus:ring-0 disabled:cursor-not-allowed disabled:text-slate-400"
+          autoComplete="off"
+          autoCorrect="off"
+          autoCapitalize="sentences"
+          spellCheck="true"
+          className="w-full min-h-[120px] resize-none rounded-t-xl bg-transparent px-4 py-3 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none focus:ring-0 disabled:cursor-not-allowed disabled:text-slate-400"
+          style={{ fontSize: '16px' }}
         />
         {/* Footer de stats rediseñado */}
         <div className="border-t border-slate-100 dark:border-slate-700/60 px-3 pt-2 pb-1.5 space-y-1.5">
@@ -909,7 +914,7 @@ const PromptInput = ({ promptUsuario, setPromptUsuario, onSubmit, isLoading, dis
       )}
 
       <button type="submit" disabled={isLoading || disabled}
-        className="inline-flex w-full items-center justify-center rounded-xl px-6 py-3 text-sm font-semibold text-white transition disabled:cursor-not-allowed disabled:opacity-40"
+        className="inline-flex w-full items-center justify-center rounded-xl px-6 py-3.5 text-sm font-semibold text-white transition disabled:cursor-not-allowed disabled:opacity-40 min-h-[48px]"
         style={{ backgroundColor: 'rgb(var(--color-accent))' }}
         onMouseEnter={e => !e.currentTarget.disabled && (e.currentTarget.style.backgroundColor = 'rgb(var(--color-accent-2))')}
         onMouseLeave={e => (e.currentTarget.style.backgroundColor = 'rgb(var(--color-accent))')}>
